@@ -54,3 +54,13 @@ export const dataAnimal = [
     title: "Wild Animals",
   },
 ];
+export const accounts = [
+  {
+    email: "admin@gmail.com",
+    password: "123456",
+  },
+  {
+    email: "test@gmail.com",
+    password: "test123",
+  },
+];

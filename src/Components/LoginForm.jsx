@@ -1,7 +1,15 @@
 import React from "react";
-import "./loginForm.scss";
+import "./style/loginForm.scss";
+import { useState } from "react";
 
-const LoginForm = () => {
+const LoginForm = ({ login }) => {
+  const [details, setDetails] = useState({ name: "", email: "", password: "" });
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    login(details);
+  };
+
   return (
     <div className="form">
       <div className="form__image">
@@ -11,7 +19,7 @@ const LoginForm = () => {
           srcset=""
         />
       </div>
-      <form className="form__inner" action="">
+      <form className="form__inner" action="" onSubmit={submitHandler}>
         <div className="form__inner-group">
           <h2>Sign in with your Ecom account</h2>
           <p>
@@ -21,6 +29,18 @@ const LoginForm = () => {
             </a>
           </p>
           <div className="form-group">
+            <label htmlFor="email">Name</label>
+            <input
+              className="form-control-submit"
+              type="name"
+              name="name"
+              placeholder="Name"
+              id="name"
+              onChange={(e) => setDetails({ ...details, name: e.target.value })}
+              value={details.name}
+            />
+          </div>
+          <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
               className="form-control-submit"
@@ -28,6 +48,10 @@ const LoginForm = () => {
               name="email"
               placeholder="Email I'd"
               id="email"
+              onChange={(e) =>
+                setDetails({ ...details, email: e.target.value })
+              }
+              value={details.email}
             />
           </div>
           <div className="form-group">
@@ -38,6 +62,10 @@ const LoginForm = () => {
               name="password"
               placeholder="Password"
               id="password-field"
+              onChange={(e) =>
+                setDetails({ ...details, password: e.target.value })
+              }
+              value={details.password}
             />
           </div>
           <button className="btn-signin">Sign In</button>

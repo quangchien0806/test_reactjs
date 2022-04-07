@@ -1,0 +1,33 @@
+.footer {
+  background-color: #f9575c;
+  padding-top: 50px;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    padding: 0 20px;
+    width: 25%;
+    h2 {
+      margin-bottom: 30px;
+      color: #fff;
+      font-size: 21px;
+    }
+    .logo {
+      img {
+        margin-bottom: 20px;
+      }
+    }
+    p {
+      color: #fff;
+    }
+  }
+  &__link {
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 20px;
+    width: fit-content;
+    font-weight: 400;
+  }
+}

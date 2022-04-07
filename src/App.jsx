@@ -5,7 +5,7 @@ import Home from "./Components/Home";
 const App = () => {
   return (
     <div>
-      <LoginForm />
+      <Home />
     </div>
   );
 };
