@@ -15,6 +15,9 @@ img {
 }
 .wrapper {
   position: relative;
-  
-  
+}
+@media only screen and (max-width: 690px) {
+  .container {
+    margin: 0;
+  }
 }
