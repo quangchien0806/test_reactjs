@@ -1,13 +1,8 @@
 import React from "react";
-import LoginForm from "./Components/LoginForm";
-import Home from "./Components/Home";
+import AppRouter from "./Components/AppRouter";
 
 const App = () => {
-  return (
-    <div>
-      <Home />
-    </div>
-  );
+  return <AppRouter />;
 };
 
 export default App;

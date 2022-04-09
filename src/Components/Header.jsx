@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./style/header.scss";
-const Header = ({ logout, user }) => {
+const Header = ({ logout }) => {
+  const [menu, setMenu] = useState(false);
+
+  const showMenu = () => setMenu(!menu);
   return (
     <header className="header">
       <div className="container">
@@ -14,42 +18,89 @@ const Header = ({ logout, user }) => {
           <div className="navbar__menu">
             <ul className="main-menu">
               <li className="menu-item">
-                <a href="#" className="text-item">
+                <Link to="#" className="text-item">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="menu-item">
-                <a href="#" className="text-item">
+                <Link to="#" className="text-item">
                   About
-                </a>
+                </Link>
               </li>
               <li className="menu-item">
-                <a href="#" className="text-item">
+                <Link to="#" className="text-item">
                   Shop
-                </a>
+                </Link>
               </li>
               <li className="menu-item">
-                <a href="#" className="text-item">
+                <Link to="#" className="text-item">
                   Pages
-                </a>
+                </Link>
               </li>
               <li className="menu-item">
-                <a href="#" className="text-item">
+                <Link to="#" className="text-item">
                   Blog
-                </a>
+                </Link>
               </li>
               <li className="menu-item">
-                <a href="#" className="text-item">
+                <Link to="#" className="text-item">
                   Story
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
           <div className="navbar__user">
-            <a className="user-item" href="#" onClick={logout}>
-              <i class="fa-solid fa-user"></i>
-              <span>{user.name}</span>
-            </a>
+            <Link className="user-item" to="#" onClick={logout}>
+              <i className="fa-solid fa-user"></i>
+              <span>{localStorage.getItem("name")}</span>
+            </Link>
+            <button
+              className={menu ? "menu-btn active" : "menu-btn"}
+              onClick={showMenu}
+            >
+              <span className="icon-menu"></span>
+              <span className="icon-menu"></span>
+              <span className="icon-menu"></span>
+            </button>
+          </div>
+
+          <div
+            className={
+              menu ? "navbar__menu-mobile active" : "navbar__menu-mobile"
+            }
+          >
+            <ul className="main-menu">
+              <li className="menu-item">
+                <Link to="#" className="text-item">
+                  Home
+                </Link>
+              </li>
+              <li className="menu-item">
+                <Link to="#" className="text-item">
+                  About
+                </Link>
+              </li>
+              <li className="menu-item">
+                <Link to="#" className="text-item">
+                  Shop
+                </Link>
+              </li>
+              <li className="menu-item">
+                <Link to="#" className="text-item">
+                  Pages
+                </Link>
+              </li>
+              <li className="menu-item">
+                <Link to="#" className="text-item">
+                  Blog
+                </Link>
+              </li>
+              <li className="menu-item">
+                <Link to="#" className="text-item">
+                  Story
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

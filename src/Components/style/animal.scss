@@ -4,6 +4,7 @@
     max-width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     &__details {
       margin: 0 -20px;
@@ -26,6 +27,27 @@
       .title-animal {
         margin: 20px 0;
         color: #59d9b1;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .animal__list {
+    .animal {
+      &__details {
+        width: 50%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 690px) {
+  .container {
+    margin: 0 40px;
+  }
+  .animal__list {
+    .animal {
+      &__details {
+        width: 100%;
       }
     }
   }
