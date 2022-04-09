@@ -1,5 +1,5 @@
 import React from "react";
-import "./style/animal.scss";
+import "../style/animal.scss";
 import { dataAnimal } from "./../data";
 const Animal = () => {
   return (

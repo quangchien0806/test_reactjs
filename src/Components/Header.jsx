@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./style/header.scss";
+import "../style/header.scss";
 const Header = ({ logout }) => {
   const [menu, setMenu] = useState(false);
 

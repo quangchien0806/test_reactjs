@@ -1,5 +1,5 @@
 import React from "react";
-import "./style/loginForm.scss";
+import "../style/loginForm.scss";
 import { useState } from "react";
 import { accounts } from "../data";
 import { Link, useHistory } from "react-router-dom";
@@ -18,7 +18,7 @@ const LoginForm = () => {
     );
     if (account) {
       localStorage.setItem("checkLogin", "true");
-      localStorage.setItem("name", details.name);
+      localStorage.setItem("name", account.name);
       history.push("/");
     } else {
       alert("Password or Email is wrong");
@@ -42,18 +42,6 @@ const LoginForm = () => {
               Click here
             </Link>
           </p>
-          <div className="form-group">
-            <label htmlFor="email">Name</label>
-            <input
-              className="form-control-submit"
-              type="name"
-              name="name"
-              placeholder="Name"
-              id="name"
-              onChange={(e) => setDetails({ ...details, name: e.target.value })}
-              value={details.name}
-            />
-          </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
