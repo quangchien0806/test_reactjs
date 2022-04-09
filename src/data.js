@@ -56,10 +56,12 @@ export const dataAnimal = [
 ];
 export const accounts = [
   {
+    name: "admin",
     email: "admin@gmail.com",
     password: "123456",
   },
   {
+    name: "test",
     email: "test@gmail.com",
     password: "test123",
   },

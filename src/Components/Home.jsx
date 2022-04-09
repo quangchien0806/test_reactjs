@@ -1,5 +1,5 @@
 import React from "react";
-import "./style/home.scss";
+import "../style/home.scss";
 import Header from "./Header";
 import Animal from "./Animal";
 import Footer from "./Footer";
